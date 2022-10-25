@@ -1,3 +1,4 @@
+from distutils.util import execute
 from http import server
 import os
 from pickle import FALSE
@@ -15,9 +16,7 @@ class ImdbRequest(API):
     @classmethod
     def _search_movie_id(cls, keywords, save_response = False):
         request_statement = f'{cls.url_base}/Search/{cls.key}/{keywords}'
-        server_response = requests.get(request_statement)
-        movie_titles = json.loads(server_response.content)
-        if save_response == True : cls._save_server_response(f'Search_{keywords}',movie_titles)
+        movie_title = API._execute_request(request_statement)
         return cls._best_search_result(movie_titles)
     
     @classmethod
@@ -34,4 +33,4 @@ class ImdbRequest(API):
         server_response = requests.get(request_statement)
         reviews = json
 
-print(ImdbRequest._load_movie_id('Searc'))
+print(ImdbRequest._load_movie_id('Search_inception'))

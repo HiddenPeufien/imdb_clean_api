@@ -19,3 +19,4 @@ class API:
         server_response = requests.get(request)
         pythonic_server_response= json.loads(server_response.content)
         if not(save_file is None) : cls._save_server_response(f'Search_',pythonic_server_response)
+        return pythonic_server_response

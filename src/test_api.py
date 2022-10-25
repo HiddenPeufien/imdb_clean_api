@@ -8,13 +8,3 @@ def test_save_load():
     assert reading == {"test_key":1}
 
 test_save_load()
-
-
-
-
-class secret():
-    @classmethod
-    def _secret(cls):
-        return 0
-
-secret._secret()
