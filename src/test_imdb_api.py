@@ -1,4 +1,4 @@
-from src.imdb_api import *
+from imdb_api import *
 
 
 def test_search_movie():

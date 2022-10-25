@@ -1,9 +1,4 @@
-from distutils.util import execute
-from http import server
 import os
-from pickle import FALSE
-import re
-from urllib import response
 import requests
 import json
 from api import API
@@ -21,7 +16,7 @@ class ImdbRequest(API):
     
     @classmethod
     def _load_movie_id(cls, filename):
-        server_response = cls._load_server_response(filename)
+        server_response = API.load_server_response(filename)
         return cls._best_search_result(server_response)
 
     @classmethod
