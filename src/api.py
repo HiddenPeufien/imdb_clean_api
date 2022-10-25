@@ -9,6 +9,5 @@ class API:
     @classmethod
     def _load_server_response(cls, filename):
         with open(filename,'r') as response_file:
- #           server_response = response_file.readline()
-            loaded_response=json.load(response_file)
-        return loaded_response
+            server_response = json.load(response_file)
+        return server_response
