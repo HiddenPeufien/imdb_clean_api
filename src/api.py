@@ -2,9 +2,10 @@ import json
 
 class API:
     @classmethod
-    def _save_server_response(cls, filename, server_response):
+    def _save_server_response(cls, filename, server_response_content):
         with open(filename,'w') as saving_file:
-            saving_file.write(str(server_response))
+            json_obect = json.dump(server_response_content, saving_file)
+
         
     @classmethod
     def _load_server_response(cls, filename):
