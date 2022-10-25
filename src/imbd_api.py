@@ -32,4 +32,4 @@ class ImdbRequest(API):
     def request_review(movie_title):
         pass
 
-print(ImdbRequest._load_movie_id('Search_inception'))
+print(ImdbRequest._load_movie_id('Searc'))
