@@ -29,7 +29,9 @@ class ImdbRequest(API):
     def _best_search_result(cls, search_results):
         return search_results['results'][0]
     
-    def request_review(movie_title):
-        pass
+    def _request_review(movie_id):
+        request_statement = f'{cls.url_base}/Reviews/{cls.key}/{id}'
+        server_response = requests.get(request_statement)
+        reviews = json
 
 print(ImdbRequest._load_movie_id('Searc'))
